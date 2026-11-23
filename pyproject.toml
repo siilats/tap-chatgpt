@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tap-chatgpt"
+version = "0.1.0"
+description = "Singer tap for the OpenAI Advertiser API"
+requires-python = ">=3.9"
+
+[project.scripts]
+tap-chatgpt = "tap_chatgpt:main"
+
+[tool.setuptools]
+packages = ["tap_chatgpt"]
