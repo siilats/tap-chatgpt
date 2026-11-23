@@ -28,7 +28,11 @@ class AdvertiserAPI:
     def get(self, stream, params):
         request = Request(
             f"{API_URL}/{stream}?{urlencode(params)}",
-            headers={"Authorization": f"Bearer {self.api_key}", "Accept": "application/json"},
+            headers={
+                "Authorization": f"Bearer {self.api_key}",
+                "Accept": "application/json",
+                "User-Agent": "tap-chatgpt/0.1.1",
+            },
         )
         for attempt in range(5):
             delay = 2 ** attempt
